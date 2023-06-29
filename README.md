@@ -12,3 +12,5 @@ npx create-expo-app -e with-router
 
 - [Expo Router: Docs](https://expo.github.io/router)
 - [Expo Router: Repo](https://github.com/expo/router)
+- [Free Game Api](https://www.freetogame.com/api-doc)
+- [Main Design](https://www.behance.net/gallery/107441469/Game-Streaming-App-Design-Concept)
