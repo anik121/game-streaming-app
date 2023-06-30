@@ -1,46 +1,46 @@
-import { useRef } from "react";
-import {
-  Animated,
-  Dimensions,
-  FlatList,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { SplashScreen } from "expo-router";
+import { useEffect, useState } from "react";
+import { FlatList, ScrollView, StyleSheet, Text, View } from "react-native";
 import BigPost from "../components/home/BigPost";
 import ListPost from "../components/home/ListPost";
 import { allPost } from "../mock/post";
 
-const { width } = Dimensions.get("window");
-
 export default function Page() {
-  const viewConfig = useRef({ viewAreaCoveragePercentThreshold: 20 }).current;
-  const scrollX = useRef(new Animated.Value(0)).current;
+  const [isReady, setIsReady] = useState<boolean>(false);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsReady(true);
+    }, 1000);
+  }, []);
   return (
-    <ScrollView style={styles.container}  
-      nestedScrollEnabled={true}
-      showsVerticalScrollIndicator={false}>
-      <View>
-      <Text style={styles.title}>Following</Text>
-      <FlatList
-        data={allPost}
-        renderItem={({ item }) => <BigPost {...item} />}
-        keyExtractor={(item: any) => item.id}
-        ItemSeparatorComponent={() => <View style={{ width: 20 }} />}
-        showsHorizontalScrollIndicator={false}
-        horizontal
-      />
+    <>
+      {isReady && <SplashScreen />}
+      <ScrollView
+        style={styles.container}
+        nestedScrollEnabled={true}
+        showsVerticalScrollIndicator={false}
+      >
+        <View>
+          <Text style={styles.title}>Following</Text>
+          <FlatList
+            data={allPost}
+            renderItem={({ item }) => <BigPost {...item} />}
+            keyExtractor={(item: any) => item.id}
+            ItemSeparatorComponent={() => <View style={{ width: 20 }} />}
+            showsHorizontalScrollIndicator={false}
+            horizontal
+          />
 
-      <Text style={styles.subtitle}>Live Channels</Text>
-      <View style={styles.listPostWrapper}>
-        {allPost.map((item)=>(
-          <ListPost key={item.id} {...item} />
-        ))}
-      </View>
-      </View>
-    </ScrollView>
+          <Text style={styles.subtitle}>Live Channels</Text>
+          <View style={styles.listPostWrapper}>
+            {allPost.map((item) => (
+              <ListPost key={item.id} {...item} />
+            ))}
+          </View>
+        </View>
+      </ScrollView>
+    </>
   );
 }
 
@@ -62,6 +62,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   listPostWrapper: {
-    marginBottom: 10
+    marginBottom: 10,
   },
 });

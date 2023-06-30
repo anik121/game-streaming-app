@@ -6,10 +6,6 @@ import AppHeader from "../components/utils/AppHeader";
 
 const { width } = Dimensions.get("window");
 
-export const unstable_settings = {
-  // Ensure any route can link back to `/`
-  initialRouteName: "index",
-};
 
 export interface ScreensProps {
   id?: number;
@@ -52,23 +48,6 @@ const screens: ScreensProps[] = [
   },
   {
     id: 3,
-    name: "live",
-    options: {
-      headerShown: false,
-      tabBarIcon: ({ focused }: { focused: boolean }) => (
-        <Image
-          style={[styles.tabIcon, { opacity: focused ? 1 : 0.3 }]}
-          source={
-            focused
-              ? require("../assets/icons/live2.png")
-              : require("../assets/icons/live1.png")
-          }
-        />
-      ),
-    },
-  },
-  {
-    id: 4,
     name: "streaming",
     options: {
       headerShown: false,
@@ -84,6 +63,24 @@ const screens: ScreensProps[] = [
       ),
     },
   },
+  {
+    id: 4,
+    name: "live",
+    options: {
+      headerShown: false,
+      tabBarIcon: ({ focused }: { focused: boolean }) => (
+        <Image
+          style={[styles.tabIcon, { opacity: focused ? 1 : 0.3 }]}
+          source={
+            focused
+              ? require("../assets/icons/live2.png")
+              : require("../assets/icons/live1.png")
+          }
+        />
+      ),
+    },
+  },
+  
 ];
 
 const Layout: FC = (): JSX.Element => {

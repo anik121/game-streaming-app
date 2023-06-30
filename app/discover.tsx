@@ -18,7 +18,7 @@ export default function Page() {
       <Text style={styles.subtitle}>Recommend Channels</Text>
 
       <FlatList
-        style={{marginBottom: 20}}
+        style={{marginBottom: 30}}
         data={allPost}
         renderItem={({ item }) => <ChannelBox {...item} />}
         keyExtractor={(item: any) => item.id}
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 18,
     fontWeight: "bold",
-    marginTop: 20,
+    marginTop: 10,
     marginBottom: 20,
   }
 });
