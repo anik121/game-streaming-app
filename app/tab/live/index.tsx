@@ -1,8 +1,8 @@
 import { FlatList, ScrollView, StyleSheet, Text, View } from "react-native";
-import BigPost from "../../components/live/BigPost";
-import SliderPost from "../../components/live/SliderPort";
-import AppHeader from "../../components/utils/AppHeader";
-import { allPost } from "../../mock/post";
+import BigPost from "../../../components/live/BigPost";
+import SliderPost from "../../../components/live/SliderPort";
+import AppHeader from "../../../components/utils/AppHeader";
+import { allPost } from "../../../mock/post";
 
 export default function Page() {
   return (

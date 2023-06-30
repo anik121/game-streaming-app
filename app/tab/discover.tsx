@@ -1,11 +1,11 @@
 import { FlatList, ScrollView, StyleSheet, Text, View } from "react-native";
-import BigPost from "../components/discover/BigPost";
-import ChannelBox from "../components/discover/ChannelBox";
-import { allPost } from "../mock/post";
+import BigPost from "../../components/discover/BigPost";
+import ChannelBox from "../../components/discover/ChannelBox";
+import { allPost } from "../../mock/post";
 
 export default function Page() {
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false} bounces={false}>
       <Text style={styles.title}>Discover</Text>
       <FlatList
         data={allPost}

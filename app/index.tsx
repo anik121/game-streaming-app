@@ -1,9 +1,6 @@
-import { SplashScreen } from "expo-router";
+import { Redirect } from "expo-router";
 import { useEffect, useState } from "react";
-import { FlatList, ScrollView, StyleSheet, Text, View } from "react-native";
-import BigPost from "../components/home/BigPost";
-import ListPost from "../components/home/ListPost";
-import { allPost } from "../mock/post";
+import { StyleSheet } from "react-native";
 
 export default function Page() {
   const [isReady, setIsReady] = useState<boolean>(false);
@@ -13,35 +10,7 @@ export default function Page() {
       setIsReady(true);
     }, 1000);
   }, []);
-  return (
-    <>
-      {isReady && <SplashScreen />}
-      <ScrollView
-        style={styles.container}
-        nestedScrollEnabled={true}
-        showsVerticalScrollIndicator={false}
-      >
-        <View>
-          <Text style={styles.title}>Following</Text>
-          <FlatList
-            data={allPost}
-            renderItem={({ item }) => <BigPost {...item} />}
-            keyExtractor={(item: any) => item.id}
-            ItemSeparatorComponent={() => <View style={{ width: 20 }} />}
-            showsHorizontalScrollIndicator={false}
-            horizontal
-          />
-
-          <Text style={styles.subtitle}>Live Channels</Text>
-          <View style={styles.listPostWrapper}>
-            {allPost.map((item) => (
-              <ListPost key={item.id} {...item} />
-            ))}
-          </View>
-        </View>
-      </ScrollView>
-    </>
-  );
+  return <Redirect href="/tab"/>
 }
 
 const styles = StyleSheet.create({

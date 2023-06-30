@@ -1,11 +1,10 @@
-import { Tabs } from "expo-router";
-import { StatusBar } from "expo-status-bar";
+import { Stack } from "expo-router";
 import type { FC } from "react";
-import { Dimensions, Image, StyleSheet } from "react-native";
-import AppHeader from "../components/utils/AppHeader";
+import { StyleSheet } from "react-native";
 
-const { width } = Dimensions.get("window");
-
+export const unstable_settings = {
+  initialRouteName: "index",
+};
 
 export interface ScreensProps {
   id?: number;
@@ -16,99 +15,25 @@ export interface ScreensProps {
 const screens: ScreensProps[] = [
   {
     id: 1,
-    name: "index",
+    name: "tab",
     options: {
-      tabBarIcon: ({ focused }: { focused: boolean }) => (
-        <Image
-          style={[styles.tabIcon, { opacity: focused ? 1 : 0.3 }]}
-          source={
-            focused
-              ? require("../assets/icons/follow2.png")
-              : require("../assets/icons/follow1.png")
-          }
-        />
-      ),
+      headerShown: false
     },
   },
   {
     id: 2,
-    name: "discover",
+    name: "stream",
     options: {
-      tabBarIcon: ({ focused }: { focused: boolean }) => (
-        <Image
-          style={[styles.tabIcon, { opacity: focused ? 1 : 0.3 }]}
-          source={
-            focused
-              ? require("../assets/icons/discover2.png")
-              : require("../assets/icons/discover1.png")
-          }
-        />
-      ),
+      headerShown: true
     },
   },
-  {
-    id: 3,
-    name: "streaming",
-    options: {
-      headerShown: false,
-      tabBarIcon: ({ focused }: { focused: boolean }) => (
-        <Image
-          style={[styles.tabIcon, { opacity: focused ? 1 : 0.3 }]}
-          source={
-            focused
-              ? require("../assets/icons/streaming2.png")
-              : require("../assets/icons/streaming1.png")
-          }
-        />
-      ),
-    },
-  },
-  {
-    id: 4,
-    name: "live",
-    options: {
-      headerShown: false,
-      tabBarIcon: ({ focused }: { focused: boolean }) => (
-        <Image
-          style={[styles.tabIcon, { opacity: focused ? 1 : 0.3 }]}
-          source={
-            focused
-              ? require("../assets/icons/live2.png")
-              : require("../assets/icons/live1.png")
-          }
-        />
-      ),
-    },
-  },
-  
 ];
 
 const Layout: FC = (): JSX.Element => {
   return (
-    <>
-      <StatusBar backgroundColor="white" />
-      <Tabs
-      initialRouteName="discover"
-        screenOptions={{
-          header: () => <AppHeader />,
-          tabBarShowLabel: false,
-          tabBarHideOnKeyboard: true,
-          tabBarStyle: {
-            width: width - 30,
-            height: 70,
-            backgroundColor: "#1D212A",
-            padding: 0,
-            borderRadius: 20,
-            marginLeft: 15,
-            marginBottom: 10,
-          },
-        }}
-      >
-        {screens.map((screen: any) => (
-          <Tabs.Screen key={screen.id} {...screen} />
-        ))}
-      </Tabs>
-    </>
+      <Stack>
+        {screens.map((screen)=> <Stack.Screen key={screen.id} {...screen}/>)}
+      </Stack>
   );
 };
 

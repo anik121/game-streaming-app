@@ -1,12 +1,18 @@
+import { useRouter } from "expo-router";
 import React, { FC } from "react";
-import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
+import { Dimensions, Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { IAllPost } from "../../mock/post";
 
 const { width } = Dimensions.get("window");
 
 const SliderPost: FC<IAllPost> = ({thumbnail, title ,id}): JSX.Element => {
+  const router = useRouter();
+
+  const goToPost = ()=>{
+    router.push('/stream')
+  }
   return (
-    <View style={styles.wrapper}>
+    <Pressable style={styles.wrapper} onPress={goToPost}>
       <View style={styles.imgWrapper}>
         <Image
           source={{ uri: thumbnail }}
@@ -19,7 +25,7 @@ const SliderPost: FC<IAllPost> = ({thumbnail, title ,id}): JSX.Element => {
           <Text style={styles.smallText}><View style={styles.badge} /> Live {id}k Watching</Text>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
