@@ -23,12 +23,14 @@ const screens: ScreensProps[] = [
     name: "index",
     options: {
       tabBarIcon: ({ focused }: { focused: boolean }) => (
-        <>
-          <Image
-            style={[styles.tabIcon,{ opacity: focused ? 1 : 0.3 }]}
-            source={ focused ? require("../assets/icons/follow2.png") : require("../assets/icons/follow1.png")}
-          />
-        </>
+        <Image
+          style={[styles.tabIcon, { opacity: focused ? 1 : 0.3 }]}
+          source={
+            focused
+              ? require("../assets/icons/follow2.png")
+              : require("../assets/icons/follow1.png")
+          }
+        />
       ),
     },
   },
@@ -37,12 +39,14 @@ const screens: ScreensProps[] = [
     name: "discover",
     options: {
       tabBarIcon: ({ focused }: { focused: boolean }) => (
-        <>
-          <Image
-            style={[styles.tabIcon,{ opacity: focused ? 1 : 0.3 }]}
-            source={ focused ? require("../assets/icons/discover2.png") : require("../assets/icons/discover1.png")}
-          />
-        </>
+        <Image
+          style={[styles.tabIcon, { opacity: focused ? 1 : 0.3 }]}
+          source={
+            focused
+              ? require("../assets/icons/discover2.png")
+              : require("../assets/icons/discover1.png")
+          }
+        />
       ),
     },
   },
@@ -52,12 +56,14 @@ const screens: ScreensProps[] = [
     options: {
       headerShown: false,
       tabBarIcon: ({ focused }: { focused: boolean }) => (
-        <>
-          <Image
-            style={[styles.tabIcon,{ opacity: focused ? 1 : 0.3 }]}
-            source={ focused ? require("../assets/icons/live2.png") : require("../assets/icons/live1.png")}
-          />
-        </>
+        <Image
+          style={[styles.tabIcon, { opacity: focused ? 1 : 0.3 }]}
+          source={
+            focused
+              ? require("../assets/icons/live2.png")
+              : require("../assets/icons/live1.png")
+          }
+        />
       ),
     },
   },
@@ -67,12 +73,14 @@ const screens: ScreensProps[] = [
     options: {
       headerShown: false,
       tabBarIcon: ({ focused }: { focused: boolean }) => (
-        <>
-          <Image
-            style={[styles.tabIcon,{ opacity: focused ? 1 : 0.3 }]}
-            source={ focused ? require("../assets/icons/streaming2.png") : require("../assets/icons/streaming1.png")}
-          />
-        </>
+        <Image
+          style={[styles.tabIcon, { opacity: focused ? 1 : 0.3 }]}
+          source={
+            focused
+              ? require("../assets/icons/streaming2.png")
+              : require("../assets/icons/streaming1.png")
+          }
+        />
       ),
     },
   },
@@ -83,6 +91,7 @@ const Layout: FC = (): JSX.Element => {
     <>
       <StatusBar backgroundColor="white" />
       <Tabs
+      initialRouteName="discover"
         screenOptions={{
           header: () => <AppHeader />,
           tabBarShowLabel: false,
@@ -95,7 +104,7 @@ const Layout: FC = (): JSX.Element => {
             borderRadius: 20,
             marginLeft: 15,
             marginBottom: 10,
-          }
+          },
         }}
       >
         {screens.map((screen: any) => (
@@ -111,6 +120,6 @@ export default Layout;
 const styles = StyleSheet.create({
   tabIcon: {
     width: 30,
-    height: 30
-  }
+    height: 30,
+  },
 });

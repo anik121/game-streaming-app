@@ -18,7 +18,7 @@ const ListPost: FC<IAllPost> = ({ title, thumbnail, developer, id, platform, tag
       </View>
 
       <View>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title} lineBreakMode="tail" numberOfLines={1}>{title}</Text>
         <Text style={styles.subtitle}>LIVE: {developer}</Text>
         <Text style={styles.subtitle}># {platform}</Text>
         <View style={styles.horizontalRow}>
@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     gap: 10,
+    marginBottom: 15
   },
   thumbnail: {
     width: 130,
@@ -75,7 +76,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    width: '90%'
   },
   subtitle: {
     fontSize: 14,

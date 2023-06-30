@@ -3,6 +3,7 @@ import {
   Animated,
   Dimensions,
   FlatList,
+  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -18,7 +19,10 @@ export default function Page() {
   const scrollX = useRef(new Animated.Value(0)).current;
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}  
+      nestedScrollEnabled={true}
+      showsVerticalScrollIndicator={false}>
+      <View>
       <Text style={styles.title}>Following</Text>
       <FlatList
         data={allPost}
@@ -31,15 +35,12 @@ export default function Page() {
 
       <Text style={styles.subtitle}>Live Channels</Text>
       <View style={styles.listPostWrapper}>
-        <FlatList
-          data={allPost}
-          renderItem={({ item }) => <ListPost {...item} />}
-          keyExtractor={(item: any) => item.id}
-          ItemSeparatorComponent={() => <View style={{ height: 20 }} />}
-          showsVerticalScrollIndicator={false}
-        />
+        {allPost.map((item)=>(
+          <ListPost key={item.id} {...item} />
+        ))}
       </View>
-    </View>
+      </View>
+    </ScrollView>
   );
 }
 
@@ -61,6 +62,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   listPostWrapper: {
-    height: width / 2 - 5,
+    marginBottom: 10
   },
 });
