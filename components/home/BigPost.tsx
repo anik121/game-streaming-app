@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
     wrapper: {
         backgroundColor: 'white',
         borderRadius: 30,
-        width: width - 70,
-        height: 250
+        width: width - 90,
+        height: width - 100
     },
     thumbnail: {
         width: '100%',

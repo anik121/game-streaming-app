@@ -1,3 +1,7 @@
+type TTags = {
+  color: string,
+  title: string
+}
 export interface IAllPost{
     id: number
     title: string
@@ -10,6 +14,7 @@ export interface IAllPost{
     developer: string
     release_date: string
     freetogame_profile_url: string
+    tag: TTags[]
 }
 
 export const allPost: IAllPost[] = [
@@ -24,7 +29,12 @@ export const allPost: IAllPost[] = [
         "publisher": "Activision Blizzard",
         "developer": "Blizzard Entertainment",
         "release_date": "2022-10-04",
-        "freetogame_profile_url": "https://www.freetogame.com/overwatch-2"
+        "freetogame_profile_url": "https://www.freetogame.com/overwatch-2",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#F2BA3A',title: 'Escorts'},
+          {color: '#FCBFE6',title: 'Competitive'},
+        ]
       },
       {
         "id": 521,
@@ -37,7 +47,12 @@ export const allPost: IAllPost[] = [
         "publisher": "Blizzard Entertainment",
         "developer": "Blizzard Entertainment",
         "release_date": "2022-06-02",
-        "freetogame_profile_url": "https://www.freetogame.com/diablo-immortal"
+        "freetogame_profile_url": "https://www.freetogame.com/diablo-immortal",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#F2BA3A',title: 'Escorts'},
+          {color: '#5848F2',title: 'Competitive'},
+        ]
       },
       {
         "id": 517,
@@ -50,7 +65,12 @@ export const allPost: IAllPost[] = [
         "publisher": "Amazon Games",
         "developer": "Smilegate RPG",
         "release_date": "2022-02-11",
-        "freetogame_profile_url": "https://www.freetogame.com/lost-ark"
+        "freetogame_profile_url": "https://www.freetogame.com/lost-ark",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#F2BA3A',title: 'Escorts'},
+          {color: '#FCBFE6',title: 'Competitive'},
+        ]
       },
       {
         "id": 516,
@@ -63,7 +83,12 @@ export const allPost: IAllPost[] = [
         "publisher": "KRAFTON, Inc.",
         "developer": "KRAFTON, Inc.",
         "release_date": "2022-01-12",
-        "freetogame_profile_url": "https://www.freetogame.com/pubg"
+        "freetogame_profile_url": "https://www.freetogame.com/pubg",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#F2BA3A',title: 'Escorts'},
+          {color: '#FCBFE6',title: 'Competitive'},
+        ]
       },
       {
         "id": 508,
@@ -76,7 +101,12 @@ export const allPost: IAllPost[] = [
         "publisher": "Gaijin Entertainment",
         "developer": "Darkflow Software",
         "release_date": "2021-04-08",
-        "freetogame_profile_url": "https://www.freetogame.com/enlisted"
+        "freetogame_profile_url": "https://www.freetogame.com/enlisted",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#F2BA3A',title: 'Escorts'},
+          {color: '#FCBFE6',title: 'Competitive'},
+        ]
       },
       {
         "id": 345,
@@ -89,7 +119,12 @@ export const allPost: IAllPost[] = [
         "publisher": "InnoGames",
         "developer": "InnoGames",
         "release_date": "2012-04-17",
-        "freetogame_profile_url": "https://www.freetogame.com/forge-of-empires"
+        "freetogame_profile_url": "https://www.freetogame.com/forge-of-empires",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#F2BA3A',title: 'Escorts'},
+          {color: '#FCBFE6',title: 'Competitive'},
+        ]
       },
       {
         "id": 427,
@@ -102,7 +137,12 @@ export const allPost: IAllPost[] = [
         "publisher": "Bigpoint",
         "developer": "Bigpoint",
         "release_date": "2011-08-08",
-        "freetogame_profile_url": "https://www.freetogame.com/drakensang-online"
+        "freetogame_profile_url": "https://www.freetogame.com/drakensang-online",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#F2BA3A',title: 'Escorts'},
+          {color: '#FCBFE6',title: 'Competitive'},
+        ]
       },
       {
         "id": 525,
@@ -115,7 +155,11 @@ export const allPost: IAllPost[] = [
         "publisher": "Warner Bros. Games",
         "developer": "Player First Games",
         "release_date": "2022-07-19",
-        "freetogame_profile_url": "https://www.freetogame.com/multiversus"
+        "freetogame_profile_url": "https://www.freetogame.com/multiversus",
+        tag: [
+          {color: '#5848F2',title: 'English'},
+          {color: '#F2BA3A',title: 'Escorts'},
+        ]
       },
       {
         "id": 475,
@@ -128,7 +172,12 @@ export const allPost: IAllPost[] = [
         "publisher": "miHoYo",
         "developer": "miHoYo",
         "release_date": "2020-09-28",
-        "freetogame_profile_url": "https://www.freetogame.com/genshin-impact"
+        "freetogame_profile_url": "https://www.freetogame.com/genshin-impact",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#F2BA3A',title: 'Escorts'},
+          {color: '#FCBFE6',title: 'Competitive'},
+        ]
       },
       {
         "id": 523,
@@ -141,7 +190,11 @@ export const allPost: IAllPost[] = [
         "publisher": "Mediatonic",
         "developer": "Mediatonic",
         "release_date": "2020-08-04",
-        "freetogame_profile_url": "https://www.freetogame.com/fall-guys"
+        "freetogame_profile_url": "https://www.freetogame.com/fall-guys",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#5848F2',title: 'Competitive'},
+        ]
       },
       {
         "id": 340,
@@ -154,7 +207,12 @@ export const allPost: IAllPost[] = [
         "publisher": "GTArcade",
         "developer": "YOOZOO Games ",
         "release_date": "2019-11-14",
-        "freetogame_profile_url": "https://www.freetogame.com/game-of-thrones-winter-is-coming"
+        "freetogame_profile_url": "https://www.freetogame.com/game-of-thrones-winter-is-coming",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#F2BA3A',title: 'Escorts'},
+          {color: '#FCBFE6',title: 'Competitive'},
+        ]
       },
       {
         "id": 347,
@@ -167,7 +225,12 @@ export const allPost: IAllPost[] = [
         "publisher": "InnoGames",
         "developer": "InnoGames",
         "release_date": "2015-04-08",
-        "freetogame_profile_url": "https://www.freetogame.com/elvenar"
+        "freetogame_profile_url": "https://www.freetogame.com/elvenar",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#F2BA3A',title: 'Escorts'},
+          {color: '#FCBFE6',title: 'Competitive'},
+        ]
       },
       {
         "id": 11,
@@ -180,7 +243,11 @@ export const allPost: IAllPost[] = [
         "publisher": "Perfect World Entertainment",
         "developer": "Cryptic Studios",
         "release_date": "2013-12-06",
-        "freetogame_profile_url": "https://www.freetogame.com/neverwinter"
+        "freetogame_profile_url": "https://www.freetogame.com/neverwinter",
+        tag: [
+          {color: '#F2BA3A',title: 'Escorts'},
+          {color: '#5848F2',title: 'Competitive'},
+        ]
       },
       {
         "id": 380,
@@ -193,7 +260,11 @@ export const allPost: IAllPost[] = [
         "publisher": "Bigpoint",
         "developer": "Bigpoint",
         "release_date": "2006-12-11",
-        "freetogame_profile_url": "https://www.freetogame.com/darkorbit"
+        "freetogame_profile_url": "https://www.freetogame.com/darkorbit",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#5848F2',title: 'Escorts'},
+        ]
       },
       {
         "id": 515,
@@ -206,7 +277,12 @@ export const allPost: IAllPost[] = [
         "publisher": "Xbox Game Studios",
         "developer": "343 Industries",
         "release_date": "2021-11-15",
-        "freetogame_profile_url": "https://www.freetogame.com/halo-infinite"
+        "freetogame_profile_url": "https://www.freetogame.com/halo-infinite",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#5848F2',title: 'Escorts'},
+          {color: '#FCBFE6',title: 'Competitive'},
+        ]
       },
       {
         "id": 455,
@@ -219,7 +295,12 @@ export const allPost: IAllPost[] = [
         "publisher": "R2 Games",
         "developer": "R2 Games",
         "release_date": "2019-05-21",
-        "freetogame_profile_url": "https://www.freetogame.com/eternal-fury"
+        "freetogame_profile_url": "https://www.freetogame.com/eternal-fury",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#F2BA3A',title: 'Escorts'},
+          {color: '#FCBFE6',title: 'Competitive'},
+        ]
       },
       {
         "id": 522,
@@ -232,7 +313,12 @@ export const allPost: IAllPost[] = [
         "publisher": "Gala Lab",
         "developer": "Gala Lab",
         "release_date": "2022-06-14",
-        "freetogame_profile_url": "https://www.freetogame.com/flyff-universe"
+        "freetogame_profile_url": "https://www.freetogame.com/flyff-universe",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#F2BA3A',title: 'Escorts'},
+          {color: '#FCBFE6',title: 'Competitive'},
+        ]
       },
       {
         "id": 511,
@@ -245,7 +331,12 @@ export const allPost: IAllPost[] = [
         "publisher": "Sega",
         "developer": "Sega",
         "release_date": "2021-06-09",
-        "freetogame_profile_url": "https://www.freetogame.com/pso2-new-genesis"
+        "freetogame_profile_url": "https://www.freetogame.com/pso2-new-genesis",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#F2BA3A',title: 'Escorts'},
+          {color: '#FCBFE6',title: 'Competitive'},
+        ]
       },
       {
         "id": 5,
@@ -258,6 +349,11 @@ export const allPost: IAllPost[] = [
         "publisher": "Targem",
         "developer": "Gaijin",
         "release_date": "2017-05-30",
-        "freetogame_profile_url": "https://www.freetogame.com/crossout"
+        "freetogame_profile_url": "https://www.freetogame.com/crossout",
+        tag: [
+          {color: '#23B882',title: 'English'},
+          {color: '#F2BA3A',title: 'Escorts'},
+          {color: '#FCBFE6',title: 'Competitive'},
+        ]
       },
 ]
