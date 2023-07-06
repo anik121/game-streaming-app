@@ -50,7 +50,6 @@ const screens: ScreensProps[] = [
     id: 3,
     name: "streaming",
     options: {
-      headerShown: false,
       tabBarIcon: ({ focused }: { focused: boolean }) => (
         <Image
           style={[styles.tabIcon, { opacity: focused ? 1 : 0.3 }]}
