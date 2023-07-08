@@ -1,3 +1,4 @@
+import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import React, { FC } from "react";
 import { Dimensions, Image, Pressable, StyleSheet, Text, View } from "react-native";
@@ -19,11 +20,11 @@ const SliderPost: FC<IAllPost> = ({thumbnail, title ,id}): JSX.Element => {
           resizeMode="cover"
           style={styles.thumbnail}
         />
-        <View style={styles.overlay} />
-        <View style={styles.postMeta}>
+        
+        <LinearGradient style={styles.postMeta} colors={['transparent','rgba(0,0,0,0.6)']}>
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.smallText}><View style={styles.badge} /> Live {id}k Watching</Text>
-        </View>
+        </LinearGradient>
       </View>
     </Pressable>
   );
@@ -45,29 +46,24 @@ const styles = StyleSheet.create({
     height: "100%",
     borderRadius: 30,
   },
-  overlay: {
-    backgroundColor: "rgba(0,0,0,0.3)",
-    width: "100%",
-    height: "100%",
-    position: "absolute",
-    top: 0,
-    left: 0,
-    borderRadius: 30,
-  },
   postMeta: {
     position: "absolute",
     bottom: 0,
     left: 0,
     zIndex: 20,
     paddingLeft: 10,
-    paddingBottom: 20,
+    paddingBottom: 15,
+    paddingTop: 15,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
+    width: '100%'
   },
   title: {
     fontSize: 16,
     color: "white",
     fontWeight: "bold",
     width: width  / 2 - 50,
-    marginBottom: 7
+    marginBottom: 5
   },
   horizontalRow: {
     display: "flex",

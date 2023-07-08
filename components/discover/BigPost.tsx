@@ -1,3 +1,4 @@
+import { LinearGradient } from "expo-linear-gradient";
 import React, { FC } from "react";
 import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
 import { IAllPost } from "../../mock/post";
@@ -13,10 +14,10 @@ const BigPost: FC<IAllPost> = ({thumbnail, title ,id ,developer, platform, tag})
           resizeMode="cover"
           style={styles.thumbnail}
         />
-        <View style={styles.overlay} />
-        <View style={styles.postMeta}>
+        
+        <LinearGradient style={styles.postMeta} colors={['transparent','rgba(0,0,0,0.6)']}>
           <Text style={styles.smallText}><View style={styles.badge} /> Live {id}k Watching</Text>
-        </View>
+        </LinearGradient>
       </View>
 
       <View style={styles.postMetaWrapper}>
@@ -72,6 +73,9 @@ const styles = StyleSheet.create({
     left: 0,
     zIndex: 20,
     padding: 20,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
+    width: '100%'
   },
   postMetaWrapper:{
     display: 'flex',

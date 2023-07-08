@@ -1,3 +1,4 @@
+import { LinearGradient } from 'expo-linear-gradient';
 import React, { FC } from 'react';
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import { IAllPost } from '../../mock/post';
@@ -12,8 +13,8 @@ const BigPost:FC<IAllPost> = ({thumbnail,title, id, developer}):JSX.Element => {
             resizeMode='cover'
             style={styles.thumbnail}
         />
-        <View style={styles.overlay}/>
-        <View style={styles.postMeta}>
+        {/* <View style={styles.overlay}/> */}
+        <LinearGradient style={styles.postMeta} colors={['transparent','rgba(0,0,0,0.6)']}>
             <Text style={styles.title}>{title}</Text>
             <View style={styles.horizontalRow}>
                 <View style={styles.horizontalRow}>
@@ -24,10 +25,9 @@ const BigPost:FC<IAllPost> = ({thumbnail,title, id, developer}):JSX.Element => {
                     />
                     <Text style={styles.smallText}>{developer}</Text>
                 </View>
-
                 <Text style={styles.smallText}><View style={styles.badge}/> {id}k Watching</Text>
             </View>
-        </View>
+        </LinearGradient>
     </View>
   )
 }
@@ -46,21 +46,15 @@ const styles = StyleSheet.create({
         height: '100%',
         borderRadius: 30,
     },
-    overlay: {
-        backgroundColor: 'rgba(0,0,0,0.3)',
-        width: '100%',
-        height: '100%',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        borderRadius: 30
-    },
     postMeta:{
         position: 'absolute',
         bottom: 0,
         left: 0,
         zIndex: 20,
-        padding: 20
+        padding: 20,
+        borderBottomLeftRadius: 30,
+        borderBottomRightRadius: 30,
+        width: '100%'
     },
     title: {
         color: 'white',

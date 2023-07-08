@@ -1,3 +1,4 @@
+import { LinearGradient } from "expo-linear-gradient";
 import React, { FC } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { IAllPost } from "../../mock/post";
@@ -6,15 +7,16 @@ const ListPost: FC<IAllPost> = ({ title, thumbnail, developer, id, platform, tag
   return (
     <View style={styles.wrapper}>
       <View style={styles.imgWrapper}>
-        <View style={styles.overlay} />
         <Image
           source={{ uri: thumbnail }}
           resizeMode="cover"
           style={styles.thumbnail}
         />
-        <Text style={styles.smallText}>
-          <View style={styles.badge} /> {id}k Watching
-        </Text>
+        <LinearGradient style={styles.linerGradient} colors={['transparent','rgba(0,0,0,0.6)']}>
+          <Text style={styles.smallText}>
+            <View style={styles.badge} /> {id}k Watching
+          </Text>
+        </LinearGradient>
       </View>
 
       <View>
@@ -48,24 +50,21 @@ const styles = StyleSheet.create({
   imgWrapper: {
     position: "relative",
   },
-  overlay: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    borderRadius: 10,
-    backgroundColor: "rgba(0,0,0,0.3)",
-    zIndex: 10,
-  },
   smallText: {
     color: "white",
     fontSize: 10,
-    fontWeight: "500",
+    fontWeight: "500"
+  },
+  linerGradient:{
     position: 'absolute',
-    bottom: 10,
-    left: 10,
-    zIndex: 11
+    bottom: 0,
+    left: 0,
+    width: '100%',
+    zIndex: 10,
+    paddingTop: 15,
+    paddingBottom: 7,
+    paddingLeft: 10,
+    borderRadius: 10,
   },
   badge: {
     width: 8,
