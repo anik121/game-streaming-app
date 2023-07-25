@@ -1,11 +1,17 @@
 # Expo Router ( React Native )
 
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in 
+the `app/` directory.
+
+## Preview
+
+![preview](./assets/game-striming-app.png)
 
 ## 📝 Notes
 
 - [Expo Router: Docs](https://expo.github.io/router)
 - [Expo Router: Repo](https://github.com/expo/router)
+
 
 ## How to run app?
 
